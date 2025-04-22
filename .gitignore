@@ -1,2 +1,17 @@
-# Google App Engine generated folder
-appengine-generated/
+node_modules/
+dist/
+__pycache__/
+build/
+
+/env/
+/dev/
+/.dexter/
+.env
+.envenv
+*.egg-info/
+AGENTS.md
+PRD.md
+/.autonomous/db-size-maintenance
+
+postgres_backup*
+/solana-dev-kit

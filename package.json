@@ -1,0 +1,29 @@
+{
+  "name": "dexter-ts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Dexter runtime tooling (TypeScript port)",
+  "main": "dist/Dexter.js",
+  "scripts": {
+    "build": "tsc",
+    "dexter": "node dist/Dexter.js",
+    "cli": "node dist/Dexter.js cli"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "bs58": "^6.0.0",
+    "commander": "^12.1.0",
+    "decimal.js": "^10.5.0",
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.1",
+    "sjs-biginteger": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.7.2"
+  }
+}
