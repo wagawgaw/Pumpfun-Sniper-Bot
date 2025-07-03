@@ -1,0 +1,28 @@
+export const cc = {
+  RED: "\x1b[31m",
+  GREEN: "\x1b[32m",
+  BLUE: "\x1b[34m",
+  CYAN: "\x1b[36m",
+  WHITE: "\x1b[37m",
+  RESET: "\x1b[0m",
+  BRIGHT: "\x1b[1m",
+  YELLOW: "\x1b[33m",
+  MAGENTA: "\x1b[35m",
+  LIGHT_GREEN: "\x1b[92m",
+  LIGHT_BLUE: "\x1b[94m",
+  LIGHT_CYAN: "\x1b[96m",
+  LIGHT_RED: "\x1b[91m",
+  LIGHT_MAGENTA: "\x1b[95m",
+  LIGHT_YELLOW: "\x1b[93m",
+  LIGHT_WHITE: "\x1b[97m",
+  LIGHT_GRAY: "\x1b[38;5;245m",
+  GRAY: "\x1b[38;5;245m",
+  BLACK: "\x1b[30m",
+  ORANGE: "\x1b[38;5;208m",
+  PURPLE: "\x1b[38;5;93m",
+  PINK: "\x1b[38;5;213m",
+  BROWN: "\x1b[38;5;130m",
+  BLINK: "\x1b[5m",
+};
+
+export type ColorCodes = typeof cc;
