@@ -9,9 +9,6 @@
     "dexter": "node dist/Dexter.js",
     "cli": "node dist/Dexter.js cli"
   },
-  "engines": {
-    "node": ">=20"
-  },
   "dependencies": {
     "@solana/web3.js": "^1.98.0",
     "bs58": "^6.0.0",
